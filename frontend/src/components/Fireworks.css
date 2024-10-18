@@ -1,0 +1,53 @@
+/* Full screen fireworks overlay */
+.fireworks-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Makes it not interactable */
+    z-index: 100; /* On top of all elements */
+    overflow: hidden;
+  }
+  
+  @keyframes fireworks-crack {
+    0% {
+      opacity: 1;
+      transform: scale(0);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.5);
+    }
+  }
+  
+  /* Firework particle */
+  .firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    animation: fireworks-crack 1.5s ease-in-out infinite;
+  }
+  
+  /* Different colors and sizes for variation */
+  .firework.red {
+    background-color: red;
+    animation-duration: 1.4s;
+  }
+  
+  .firework.blue {
+    background-color: blue;
+    animation-duration: 1.6s;
+  }
+  
+  .firework.green {
+    background-color: green;
+    animation-duration: 1.7s;
+  }
+  
